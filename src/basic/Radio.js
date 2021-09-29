@@ -33,6 +33,7 @@ class Radio extends Component {
         {Platform.OS === 'ios' && !this.props.standardStyle ? (
           this.props.selected && (
             <Icon
+              type='FontAwesome5'
               style={{
                 color: this.props.selectedColor
                   ? this.props.selectedColor
@@ -46,6 +47,7 @@ class Radio extends Component {
           )
         ) : (
           <Icon
+            type='FontAwesome5'
             style={{
               color:
                 Platform.OS === 'ios'
