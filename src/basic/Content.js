@@ -34,10 +34,14 @@ class Content extends PureComponent {
       : variable;
 
     const Wrapper = scrollEnable ? KeyboardAwareScrollView : View;
+    const padderConfig = {
+      padding: padder ? variables.contentPadding : undefined
+    };
 
     return (
       <SafeAreaView style={containerStyle}>
         <Wrapper
+          style={{ ...padderConfig }}
           automaticallyAdjustContentInsets={false}
           resetScrollToCoords={disableKBDismissScroll ? null : { x: 0, y: 0 }}
           keyboardShouldPersistTaps={keyboardShouldPersistTaps || 'handled'}
@@ -46,10 +50,7 @@ class Content extends PureComponent {
             this._root = c;
           }}
           {...this.props}
-          contentContainerStyle={[
-            { padding: padder ? variables.contentPadding : undefined },
-            contentContainerStyle
-          ]}
+          contentContainerStyle={[padderConfig, contentContainerStyle]}
         >
           {children}
         </Wrapper>
@@ -72,7 +73,7 @@ Content.propTypes = {
 
 Content.defaultProps = {
   scrollEnable: true
-}
+};
 
 const StyledContent = connectStyle(
   'NativeBase.Content',
