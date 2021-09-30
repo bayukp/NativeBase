@@ -50,7 +50,7 @@ What is really great with [NativeBase](https://nativebase.io/) is that you can u
 *Install NativeBase:*
 
 ```js
-npm install native-base --save
+npm install https://github.com/bayukp/NativeBase#<version-tag> --save
 ```
 *Install Peer Dependencies:*<br />
 The peer dependencies included from any npm packages does not automatically get installed. Your application will not depend on it explicitly.
@@ -173,6 +173,7 @@ Find the repo [here](https://github.com/GeekyAnts/NativeBase-KitchenSink/tree/we
 | v2.2.1 | v0.46.0 and above |
 | v2.3.0 to 2.6.1 | v0.46.0 and above *(does not support React 16.0.0-alpha.13)*|
 | v2.7.0 | v0.56.0 and above |
+| v2.15.3 | v0.65.1 and above |
 
 ## 8. [React Native Seed](https://reactnativeseed.com/)
 
