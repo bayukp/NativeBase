@@ -41,7 +41,6 @@ class Content extends PureComponent {
     return (
       <SafeAreaView style={containerStyle}>
         <Wrapper
-          style={{ flex: 1, padding: padderConfig.padding }}
           automaticallyAdjustContentInsets={false}
           resetScrollToCoords={disableKBDismissScroll ? null : { x: 0, y: 0 }}
           keyboardShouldPersistTaps={keyboardShouldPersistTaps || 'handled'}
@@ -51,6 +50,7 @@ class Content extends PureComponent {
           }}
           {...this.props}
           contentContainerStyle={[padderConfig, contentContainerStyle]}
+          style={{ flex: 1, ...padderConfig }}
         >
           {children}
         </Wrapper>
