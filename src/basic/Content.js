@@ -34,6 +34,9 @@ class Content extends PureComponent {
       : variable;
 
     const Wrapper = scrollEnable ? KeyboardAwareScrollView : View;
+    const padderConfig = {
+      padding: padder ? variables.contentPadding : undefined
+    };
 
     return (
       <SafeAreaView style={containerStyle}>
@@ -46,10 +49,8 @@ class Content extends PureComponent {
             this._root = c;
           }}
           {...this.props}
-          contentContainerStyle={[
-            { padding: padder ? variables.contentPadding : undefined },
-            contentContainerStyle
-          ]}
+          contentContainerStyle={[padderConfig, contentContainerStyle]}
+          style={{ flex: 1, ...padderConfig }}
         >
           {children}
         </Wrapper>
@@ -72,7 +73,7 @@ Content.propTypes = {
 
 Content.defaultProps = {
   scrollEnable: true
-}
+};
 
 const StyledContent = connectStyle(
   'NativeBase.Content',
